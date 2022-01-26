@@ -12,6 +12,10 @@ class UserController {
     }
   }
 
+  static registerPage(req, res) {
+    res.status(200).render("register.ejs");
+  }
+
   static async register(req, res) {
     try {
       const { email, password, name, avatar } = req.body;
@@ -27,6 +31,10 @@ class UserController {
     } catch (error) {
       res.status(500).json(error);
     }
+  }
+
+  static loginPage(req, res) {
+    res.status(200).render("login.ejs");
   }
 
   static async login(req, res) {
